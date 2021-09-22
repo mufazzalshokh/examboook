@@ -1,10 +1,12 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView
+from django.shortcuts import render
 
 from book.models import BookModel
 
 
-class BookListView(LoginRequiredMixin, ListView):
-    template_name = 'books_list.html'
-    model = BookModel
-    queryset = BookModel.objects.order_by('-pk')
+def books_list(request):
+    books = BookModel.objects.all()
+    context = {
+        'books': books
+    }
+    return render(request, 'books_list.html', context)
+

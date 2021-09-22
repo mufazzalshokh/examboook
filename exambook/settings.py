@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-pu$)ny)90c=dv31w3gi*4%v)8wvdp4&q3x9br)85$fbcc0vaey
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -16,8 +16,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'book',
 
+    'book',
 ]
 
 MIDDLEWARE = [
